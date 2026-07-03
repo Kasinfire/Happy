@@ -1,0 +1,155 @@
+/* === Reset and variables === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --bg--color: #120C2E;
+    --warning--text: #322d4c;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg--color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Jersey 10', sans-serif; 
+
+}
+
+.bear {
+    position: relative;
+    height: 100vh; 
+    width: 100%; 
+    max-width: 2500px;
+    cursor: pointer;
+}
+
+.bear img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    object-position: bottom; 
+    transition: opacity 0.3s ease-in-out;
+}
+
+.bear__Link {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    z-index: 5; 
+}
+.bear__Link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.bear__Hiding {
+    opacity: 1;    object-position: bottom; 
+
+}
+
+.bear__Normal, 
+.bear__Normal__LH, 
+.bear__Normal__RH,
+.bear__bubble {
+    opacity: 0; 
+}
+
+.bear.sorpresa .bear__Hiding {
+    opacity: 0; 
+}
+
+.bear.sorpresa .bear__Normal,
+.bear.sorpresa .bear__Normal__LH,
+.bear.sorpresa .bear__Normal__RH,
+.bear.sorpresa .bear__bubble,
+.bear.sorpresa .text{
+    opacity: 1; 
+}
+
+.bear.sorpresa .bear__Link {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bear__Link__R { 
+    left: 0;
+    clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 66% 100%);
+}
+
+
+.bear__Link__L { 
+    right: 0;
+    clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+}
+
+
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: 10;
+}
+
+
+/* --- ANIMACIONES --- */
+@keyframes wiggle {
+    0%, 100% { transform: translateY(0); }
+    10% { transform: translateY(-5px); } 
+    20% { transform: rotate(-2deg); }
+    30% { transform: rotate(1deg); }
+    40% { transform: rotate(-1deg); }
+    50% { transform: rotate(0deg); }
+}
+
+.bear.sorpresa .bear__Link__L:hover,
+.bear.sorpresa .bear__Link__R:hover {
+    animation: wiggle 1.2s ease-in-out infinite;
+}
+
+
+/* === Bloqueo para celulares === */
+@media (max-width: 980px) {
+
+  body > * {
+    display: none !important;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+
+  body::before {
+    content: "Esta página está diseñada solo para computadora \A Por favor ábrela desde tu laptop o PC.";
+    white-space: pre-wrap;
+    color: var(--warning--text);
+    font-family: 'Jersey 10', sans-serif;
+    font-size: clamp(20px, 6vw, 32px);
+    line-height: 1;
+    margin: 50px;
+  }
+
+}

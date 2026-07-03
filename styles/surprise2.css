@@ -1,0 +1,78 @@
+:root {
+    --bg--color: #611332;
+    --letter: #3e0c20;
+}
+
+body {
+    background-color: var(--bg--color);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.present__bgr {
+    pointer-events: none; 
+}
+
+
+.present {
+    position: relative;
+    aspect-ratio: 5120 / 2800;
+    width: min(100%, calc(100vh * (5120 / 2800)));
+    height: 100vh;
+    max-width: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.present img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    object-position: center; 
+}
+
+.gift__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block; 
+    cursor: pointer; 
+}
+
+.present__one__link { clip-path: polygon(0% 24%, 51% 24%, 51% 45%, 0% 45%); }
+.present__two__link {clip-path: polygon(52% 70%, 100% 70%, 100% 100%, 52% 100%);}
+.present__three__link {clip-path: polygon(-0.85% 61.38%, 53% 62%, 53% 100%, -0.90% 99.37%)}
+.present__four__link {clip-path:polygon(53% 43%, 100.95% 41.63%, 101.05% 61.13%, 53% 61%);}
+.present__five__link {clip-path: polygon(65% 0%, 100% 0%, 100% 27%, 65% 27%);}
+
+.gift__link:hover {
+    animation: wiggle 1.2s ease-in-out infinite;
+}
+
+.btn-regresar {
+    position: absolute; 
+    top: 14%;           
+    left: 5%;          
+    color: var(--letter);    
+    text-decoration: none; 
+    font-size: clamp(20px, 4vw, 60px); 
+    
+    z-index: 100;   
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-regresar:hover {
+    transform: scale(1.1); 
+    opacity: 0.8; 
+}

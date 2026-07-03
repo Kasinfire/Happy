@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz cumpleaños</title>
+
+    <link rel="stylesheet" href="styles/theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+
+  </head>
+  <body>
+    <div class="bear" id="osoInteractive">
+      <img src="assets/bubble.png" class="bear__bubble"/>
+
+      <img src="assets/bearNormal.png" class="bear__Normal" />
+      <img src="assets/bearHiding.png" class="bear__Hiding" />
+      <a href="surprise.html" class="bear__Link bear__Link__R">
+        <img src="assets/rightArm.png" class="bear__Normal__R" />
+      </a>
+
+      <a href="surprise2.html" class="bear__Link bear__Link__L">
+        <img src="assets/leftArm.png" class="bear__Normal__L" />
+      </a>
+    </div>
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="scripts/confetti.js"></script>
+    <script src="scripts/main.js" defer></script>
+  </body>
+</html>
